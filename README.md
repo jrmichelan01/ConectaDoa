@@ -1,4 +1,4 @@
-# ConectaDoa
+ # ConectaDoa
 
 ## Sobre o projeto
 
@@ -9,13 +9,13 @@ O ConectaDoa é um projeto desenvolvido como parte do Projeto Integrador Extensi
 - JavaScript
 - Node.js
 - Express
-- Vite
+- Vite+
 - HTML e CSS
 
 ## Pré-requisitos
 
 - Node.js instalado
-- npm instalado
+- Vite+ instalado como dependência do projeto
 
 ## Como executar o projeto
 
@@ -24,7 +24,7 @@ O ConectaDoa é um projeto desenvolvido como parte do Projeto Integrador Extensi
 Na pasta do projeto, execute:
 
 ```bash
-npm install
+vp install
 ```
 
 ### 2. Iniciar a API
@@ -32,7 +32,7 @@ npm install
 Abra um terminal no VS Code e execute:
 
 ```bash
-npm run api
+vp run api
 ```
 
 A API será iniciada na porta 3000.
@@ -42,12 +42,14 @@ A API será iniciada na porta 3000.
 Abra um segundo terminal, mantendo a API em execução, e execute:
 
 ```bash
-npm run dev
+vp dev
 ```
 
-Acesse no navegador:
+Acesse o endereço local exibido no terminal. Normalmente, será:
 
 http://localhost:5173
+
+Se essa porta estiver ocupada, o Vite+ poderá selecionar outra, como a porta 5174.
 
 ## Verificação da API
 
@@ -60,6 +62,14 @@ Para testar diretamente, acesse:
 http://localhost:3000/api/health
 
 A resposta deve apresentar o status da API como `ok`.
+
+## Compilação do projeto
+
+Para verificar a compilação de produção, execute:
+
+```bash
+vp build
+```
 
 ## Variáveis de ambiente
 
