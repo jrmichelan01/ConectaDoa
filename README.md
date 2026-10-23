@@ -15,7 +15,7 @@ O ConectaDoa é um projeto desenvolvido como parte do Projeto Integrador Extensi
 ## Pré-requisitos
 
 - Node.js instalado
-- Vite+ instalado como dependência do projeto
+- Dependências do projeto instaladas por meio do Vite+
 
 ## Como executar o projeto
 
@@ -27,7 +27,23 @@ Na pasta do projeto, execute:
 vp install
 ```
 
-### 2. Iniciar a API
+### 2. Configurar as variáveis de ambiente
+
+O arquivo `.env.example` contém um exemplo de configuração da variável `PORT`.
+
+Crie uma cópia desse arquivo com o nome `.env`, na raiz do projeto.
+
+No terminal PowerShell do VS Code, execute:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Se o arquivo `.env` já existir, não execute esse comando novamente, para evitar sobrescrever sua configuração.
+
+O arquivo `.env` é utilizado localmente e não deve ser enviado ao GitHub.
+
+### 3. Iniciar a API
 
 Abra um terminal no VS Code e execute:
 
@@ -37,9 +53,11 @@ vp run api
 
 A API será iniciada na porta 3000.
 
-### 3. Iniciar a aplicação web
+Mantenha esse terminal aberto enquanto utiliza a aplicação.
 
-Abra um segundo terminal, mantendo a API em execução, e execute:
+### 4. Iniciar a aplicação web
+
+Abra um segundo terminal no VS Code e execute:
 
 ```bash
 vp dev
@@ -63,6 +81,8 @@ http://localhost:3000/api/health
 
 A resposta deve apresentar o status da API como `ok`.
 
+Na página inicial do ConectaDoa, o status da API também deve ser exibido.
+
 ## Compilação do projeto
 
 Para verificar a compilação de produção, execute:
@@ -73,7 +93,7 @@ vp build
 
 ## Variáveis de ambiente
 
-O arquivo `.env.example` contém um exemplo de configuração da variável `PORT`. O arquivo `.env` é utilizado localmente e não deve ser enviado ao repositório.
+O arquivo `.env.example` deve ser mantido no repositório para orientar a configuração do projeto. O arquivo `.env` contém configurações locais e não deve ser enviado ao GitHub.
 
 ## Autor
 
