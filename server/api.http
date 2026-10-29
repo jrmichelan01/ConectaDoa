@@ -1,0 +1,137 @@
+ 
+### 1. Verificar API e banco de dados
+GET http://localhost:3000/api/health
+
+###
+
+### 2. Listar todos os doadores
+GET http://localhost:3000/api/doadores
+
+###
+
+### 3. Buscar a doadora Ana pelo ID
+GET http://localhost:3000/api/doadores/1
+
+###
+
+### 4. Buscar um doador que não existe
+GET http://localhost:3000/api/doadores/9999
+
+###
+
+### 5. Cadastrar um novo doador
+POST http://localhost:3000/api/doadores
+Content-Type: application/json
+
+{
+  "nome": "Maria Oliveira",
+  "email": "maria.oliveira.teste@example.com",
+  "telefone": "14988887777"
+}
+
+###
+
+### 6. Testar cadastro com e-mail inválido
+POST http://localhost:3000/api/doadores
+Content-Type: application/json
+
+{
+  "nome": "Teste Inválido",
+  "email": "email-invalido",
+  "telefone": "14988887777"
+}
+
+###
+
+### 7. Atualizar os dados da Maria Oliveira
+PUT http://localhost:3000/api/doadores/3
+Content-Type: application/json
+
+{
+  "nome": "Maria Oliveira Atualizada",
+  "email": "maria.oliveira.teste@example.com",
+  "telefone": "14977776666"
+}
+
+###
+
+### 8. Conferir os dados atualizados da Maria
+GET http://localhost:3000/api/doadores/3
+
+###
+
+### 9. Tentar excluir um doador inexistente
+DELETE http://localhost:3000/api/doadores/9999
+
+###
+
+### 10. Tentar excluir a Ana, que possui doações
+DELETE http://localhost:3000/api/doadores/1
+
+###
+
+### 11. Listar os itens disponíveis para doação
+GET http://localhost:3000/api/itens
+
+###
+
+### 12. Listar as doações e seus itens
+GET http://localhost:3000/api/doacoes
+
+###
+
+### 13. Cadastrar uma nova doação
+POST http://localhost:3000/api/doacoes
+Content-Type: application/json
+
+{
+  "id_doador": 2,
+  "data_doacao": "2026-10-29",
+  "observacao": "Doação de teste pela API",
+  "itens": [
+    {
+      "id_item": 1,
+      "quantidade": 2
+    },
+    {
+      "id_item": 4,
+      "quantidade": 3
+    }
+  ]
+}
+
+###
+
+### 14. Conferir todas as doações após o cadastro
+GET http://localhost:3000/api/doacoes
+
+###
+
+### 15. Testar doação sem itens
+POST http://localhost:3000/api/doacoes
+Content-Type: application/json
+
+{
+  "id_doador": 2,
+  "data_doacao": "2026-10-29",
+  "observacao": "Teste de validação",
+  "itens": []
+}
+
+###
+
+### 16. Testar doação com doador inexistente
+POST http://localhost:3000/api/doacoes
+Content-Type: application/json
+
+{
+  "id_doador": 9999,
+  "data_doacao": "2026-10-29",
+  "observacao": "Teste de doador inexistente",
+  "itens": [
+    {
+      "id_item": 1,
+      "quantidade": 2
+    }
+  ]
+}

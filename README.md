@@ -1,100 +1,54 @@
+ 
 # ConectaDoa
+
+Projeto desenvolvido para a atividade de Projeto Integrador Extensionista II (PIE II), da Universidade de Marília (UNIMAR).
 
 ## Sobre o projeto
 
-O ConectaDoa é um projeto desenvolvido como parte do Projeto Integrador Extensionista II. A proposta é criar uma aplicação que possa apoiar a conexão entre pessoas interessadas em doar e iniciativas que necessitam de doações.
+O ConectaDoa é um sistema voltado ao registro e à consulta de doações, permitindo organizar os dados dos doadores, dos itens disponíveis e das doações realizadas.
 
 ## Tecnologias utilizadas
 
 - JavaScript
 - Node.js
 - Express
-- Vite+
-- HTML e CSS
+- MySQL
+- Vite
 
-## Pré-requisitos
+## Requisitos
 
-- Node.js instalado
-- Dependências do projeto instaladas por meio do Vite+
+- Node.js e npm instalados
+- MySQL instalado e em execução
 
-## Como executar o projeto
+## Configuração do projeto
 
-### 1. Instalar as dependências
+1. Instale as dependências:
 
-Na pasta do projeto, execute:
+   npm install
 
-```bash
-vp install
-```
+2. Configure as variáveis de ambiente no arquivo `.env`, utilizando o `.env.example` como modelo.
 
-### 2. Configurar as variáveis de ambiente
+3. Crie o banco de dados e as tabelas utilizando o arquivo `database/schema.sql`.
 
-O arquivo `.env.example` contém um exemplo de configuração da variável `PORT`.
+4. Se necessário, insira os dados iniciais utilizando o arquivo `database/seed.sql`.
 
-Crie uma cópia desse arquivo com o nome `.env`, na raiz do projeto.
+## Como executar
 
-No terminal PowerShell do VS Code, execute:
+Para iniciar a API:
 
-```powershell
-Copy-Item .env.example .env
-```
+   npm run api
 
-Se o arquivo `.env` já existir, não execute esse comando novamente, para evitar sobrescrever sua configuração.
+Para iniciar o ambiente de desenvolvimento do front-end, abra outro terminal e execute:
 
-O arquivo `.env` é utilizado localmente e não deve ser enviado ao GitHub.
+   npm run dev
 
-### 3. Iniciar a API
+## Rotas da API
 
-Abra um terminal no VS Code e execute:
+- GET `/api/health` — verifica a conexão com o banco de dados.
+- `/api/doadores` — consulta e gerencia os doadores.
+- `/api/itens` — consulta os itens disponíveis.
+- `/api/doacoes` — consulta e cadastra doações.
 
-```bash
-vp run api
-```
+## Observação
 
-A API será iniciada na porta 3000.
-
-Mantenha esse terminal aberto enquanto utiliza a aplicação.
-
-### 4. Iniciar a aplicação web
-
-Abra um segundo terminal no VS Code e execute:
-
-```bash
-vp dev
-```
-
-Acesse o endereço local exibido no terminal. Normalmente, será:
-
-http://localhost:5173
-
-Se essa porta estiver ocupada, o Vite+ poderá selecionar outra, como a porta 5174.
-
-## Verificação da API
-
-A API disponibiliza a rota:
-
-`GET /api/health`
-
-Para testar diretamente, acesse:
-
-http://localhost:3000/api/health
-
-A resposta deve apresentar o status da API como `ok`.
-
-Na página inicial do ConectaDoa, o status da API também deve ser exibido.
-
-## Compilação do projeto
-
-Para verificar a compilação de produção, execute:
-
-```bash
-vp build
-```
-
-## Variáveis de ambiente
-
-O arquivo `.env.example` deve ser mantido no repositório para orientar a configuração do projeto. O arquivo `.env` contém configurações locais e não deve ser enviado ao GitHub.
-
-## Autor
-
-Projeto acadêmico — ConectaDoa.
+As credenciais do banco de dados devem permanecer no arquivo `.env`, que não deve ser enviado ao GitHub.
